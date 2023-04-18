@@ -50,7 +50,7 @@ html {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     flex:1;
     
   }
@@ -100,27 +100,31 @@ html {
 
   .first {
     background-color: rgb(81, 81, 81);
-    flex: 0 1 auto;
-    margin: 1rem;
-    padding: 1.5rem;
-    flex: 1;
-  }
-
-  .second {
-    background-color: rgb(81, 81, 81);
     flex: 1 2 auto;
-    margin: 1rem;
+    margin: 1rem auto 0;
     align-items: center;
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin-top: auto;
+  }
+
+  .second {
+    background-color: rgb(81, 81, 81);
+    flex: 1 2 auto;
+    margin: 1rem auto 0;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: auto;
   }
 
   .third {
     background-color: rgb(81, 81, 81);
     flex: 1 2 auto;
-    margin: 1rem auto 0;
     align-items: center;
     justify-content: flex-start;
     display: flex;
