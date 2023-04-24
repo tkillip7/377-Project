@@ -1,30 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INST377 project</title>
+    <title>377 Final Project</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    
     <link rel="stylesheet" href="style.css" />
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
   </head>
   <body>
-    <!-- wrapper-->
     <div class="wrapper">
-      <header class="header"><h1>Trinity Killip and Ethan Pham</h1></header>
-      <!-- container-->
+      <header class="header">
+        <h1>377 Final Project</h1>
+      </header>
+      <subheader class="subheader">
+        <h3>Trinity Killip and Ethan Pham</h3>
+      </subheader>
       <div class="container">
-        <div class="first box">
-          <h2>Map</h2>
+        <div class="left_section box">
+          <h3>Form Inputs</h3>
+          <form 
+            action= "https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json" 
+            class = "box main_form"
+          >
+          <button type ="button" id ="data_load">Load County Data</button>
+          <button type ="button" id ="data_load">Clear County Data</button>
+            <div>
+                <label for="resto">Filter By Library Name</label>
+                <input type="text" id="resto" name="resto" />
+            </div>
+            <div class = "buttons">
+            <button type ="button" id ="generate">Generate List</button>
+            </div>
+          </form>
         </div>
-
-        <div class="second box">
-          <h2>Graph</h2>
-        </div>
-
-        <div class="third box">
-          <h2>Filtered Map</h2>
+        <div class="right_section box">
+            <h2>Local Libraries</h2>
+            <div id="map" class="box"></div>
+            <ol class="box" id="restaurant_list">
+            A list of local Libraries
+            </ol>
+            <div class = "lds-ellipsis" id = "data_load_animation">
+            <div></div><div></div><div></div><div></div></div>
         </div>
       </div>
     </div>
+    <script src = "script.js"></script>
   </body>
 </html>
