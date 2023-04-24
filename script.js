@@ -3,8 +3,6 @@
   by adding `<script src="script.js">` just before your closing `</body>` tag
 */
 
-import * as d3 from "d3";
-
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -13,7 +11,7 @@ function getRandomIntInclusive(min, max) {
 
 function injectHTML(list) {
   console.log("fired injectHTML");
-  const target = document.querySelector("#restaurant_list");
+  const target = document.querySelector("#library_list");
   target.innerHTML = "";
   list.forEach((item) => {
     const str = `<li>${item.branch_name}</li>`;
@@ -35,7 +33,7 @@ function filterList(list, query) {
     */
 }
 
-function cutRestaurantList(list) {
+function cutLibraryList(list) {
   console.log("fired cut list");
   const range = [...Array(15).keys()];
   return (newArray = range.map((item) => {
@@ -123,7 +121,7 @@ async function mainEvent() {
 
   generateListButton.addEventListener("click", (event) => {
     console.log("generate new list");
-    currentList = cutRestaurantList(parsedData);
+    currentList = cutLibraryList(parsedData);
     console.log(currentList);
     injectHTML(currentList);
     markerPlace(currentList, carto);
