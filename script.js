@@ -4,6 +4,7 @@ https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson
 https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02
 */
 
+/*
 function initMap() {
   const carto = L.map("map").setView([37.8, -96], 4);
   L.titleLayer("https://.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -13,12 +14,12 @@ function initMap() {
   return carto;
 }
 
-/*function to filter database to states in Cali?*/
+
 
 async function mainEvent() {
   const carto = initMap();
 
-  /*API request */
+  
   fetch(
     "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02"
   )
@@ -32,3 +33,11 @@ async function mainEvent() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
+*/
+
+/*fetching API using d3.js*/
+d3.json("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02
+).then(function(data){
+  console.log(data)
+});
+
