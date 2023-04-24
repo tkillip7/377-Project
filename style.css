@@ -1,15 +1,8 @@
-/* CSS instructions for Lab 5 */
-/* Bring in your successful CSS from week 4 */
-/* In your #map rule, set map to display:none; to temporarily hide your map box */
 
 * {
   box-sizing: border-box;
 }
 
-/* 
-  These rules apply to actual HTML elements with no labelling!
-  So: they style the tags directly
-*/
 
 html {
   background-color: #3d3d3d;
@@ -53,13 +46,6 @@ form {
   accent-color: hsla(65, 21%, 54%, 0.482);
 }
 
-/*
-  - These styles use 'class names'
-  - You can apply them by using the 'class' attribute on your HTML
-  - like this: <div class="wrapper">
-  - note that the period vanishes there!
-*/
-
 
 .wrapper {
   min-height: 100vh;
@@ -77,12 +63,6 @@ form {
   flex:1;
 }
 
-
-/*
-  This rule implies that the H1 tag lives within another HTML tag
-  It "inherits" some rules from the above
-  Those rules won't apply to an h1 that's outside a block with the class of 'header'
-*/
 
 h1 {
   padding-top: 1rem;
@@ -108,14 +88,6 @@ h1 {
 }
 
 
-/*
-  Rules can be combined on a block to apply the 'cascade' in order
-  So you can use two classnames in a single class attribute
-  like: <div class="box section">
-
-  Rules may combine in unexpected ways - remember that the LAST thing written in this file will have "priority"
-  And will be what displays in your client
-*/
 #map {
   width: 400px;
   height: 380px;
@@ -149,11 +121,6 @@ h1 {
   flex-direction: column;
 }
 
-/*
-  This block is actually dependent on the "container" block having a flex set on it
-  and the "wrapper" block displaying as a flex column with a "vertical height" (vh) of 100.
-  That serves to cram the footer to the bottom of the page.
-*/
 
 .footer {
   flex-shrink: 0;
@@ -235,17 +202,7 @@ div.carousel {
 }
 
 .carousel_item img {
-  /* 
-    Setting width, rather than max-width or min-width,
-    means annoying pop-ins won't happen
-    but it also means you need to format your images to be compatible
-    or they will stretch weird
 
-    - try a tall one and see what happens
-    - change the height on a fixed image size and see what happens
-    - now make sure that images are _always_ square
-    - ... there's a reason crop tools are popular in image editors
-   */
   width: 150px; 
   height: 150px;
 }
@@ -266,13 +223,9 @@ div.carousel {
 .prev:focus,
 .next:focus {
   margin: 0;
-  /* Pick a good border colour and check out how it works with your buttons */
+
 }
 
-.prev:hover,
-.next:hover {
-  /* Pick a good background colour for your hover pseudoclass */
-}
 
 /*
 Form Styles
