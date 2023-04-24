@@ -86,6 +86,13 @@ html {
     border: 4px dashed;
     border-color: black;
   }
+  
+  #map {
+    
+    width: 400px;
+    height: 380px;
+    margin-bottom: 1rem;
+  }
 
   .box {
     background-color: rgb(81, 81, 81);

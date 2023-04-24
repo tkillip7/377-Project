@@ -7,10 +7,16 @@
     <title>INST377 project</title>
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Leaflet library-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
     <!-- Importing D3.js-->
-    <script>
-      src = "https://d3js.org/d3.v6.min.js";
-    </script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <!-- wrapper-->
@@ -20,6 +26,7 @@
       <div class="container">
         <div class="first box">
           <h2>Map</h2>
+          <div id="map" class="box"></div>
         </div>
 
         <div class="second box">
@@ -31,5 +38,6 @@
         </div>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
