@@ -63,6 +63,13 @@ form {
   flex:1;
 }
 
+.graph_button {
+  display: flex;
+  align-items: start;
+  flex:1;
+  
+}
+
 
 h1 {
   padding-top: 1rem;

@@ -2,7 +2,7 @@
 const svg = d3
   .select("body")
   .append("svg")
-  .attr("width", 500)
+  .attr("width", 1000)
   .attr("height", 500);
 
 // Load the data from the API
@@ -14,7 +14,7 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
       (v) => v.length,
       (d) => d.zip_code
     );
-
+    console.log(zipCounts);
     // Convert the map to an array of objects
     const zipCountsArray = Array.from(zipCounts, ([zip_code, count]) => ({
       zip_code,
@@ -28,7 +28,7 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
     const xScale = d3
       .scaleBand()
       .domain(zipCountsArray.map((d) => d.zip_code))
-      .range([50, 500])
+      .range([50, 700])
       .padding(0.2);
 
     const yScale = d3
@@ -37,17 +37,19 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
       .range([550, 50]);
 
     // Add the x-axis to the chart
+
     svg
       .append("g")
       .attr("transform", "translate(0, 40)")
       .call(d3.axisBottom(xScale))
       .selectAll("text")
       .attr("transform", "rotate(90)")
-      .attr("x", -10)
+      .attr("x", -3)
       .attr("y", -3)
       .style("text-anchor", "end");
 
     // Add the y-axis to the chart
+
     svg
       .append("g")
       .attr("transform", "translate(50, 0)")
@@ -73,7 +75,7 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
       .attr("height", (d) => 500 - yScale(d.count))
       .attr("fill", "steelblue");
 
-    // Add the zip code labels to the chart
+    /* Add the zip code labels to the chart
     svg
       .selectAll(".label")
       .data(zipCountsArray)
@@ -81,8 +83,10 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
       .append("text")
       .attr("class", "label")
       .attr("x", (d) => xScale(d.zip_code) + xScale.bandwidth())
+      .attr("y", 500)
       .attr("text-anchor", "middle")
       .text((d) => d.zip_code);
+      */
   })
   .catch((error) => {
     console.log(error);
