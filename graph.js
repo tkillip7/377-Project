@@ -33,7 +33,7 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
 
     const yScale = d3
       .scaleLinear()
-      .domain([0, d3.max(zipCountsArray, (d) => d.count)])
+      .domain([0, d3.max(zipCountsArray, (d) => d.count) + 1])
       .range([550, 50]);
 
     // Add the x-axis to the chart
