@@ -1,6 +1,6 @@
 // Set up the SVG canvas
 const svg = d3
-  .select("body")
+  .select(".right_section")
   .append("svg")
   .attr("width", 1000)
   .attr("height", 500);
