@@ -134,6 +134,14 @@ h1 {
   flex-direction: column;
 }
 
+.chart_box {
+  background-color: rgb(123, 73, 32);
+  flex: 1 2 auto;
+  margin: 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
 .footer {
   flex-shrink: 0;

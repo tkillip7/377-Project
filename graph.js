@@ -1,8 +1,8 @@
 // Set up the SVG canvas
 const svg = d3
-  .select(".right_section")
+  .select(".chart_box")
   .append("svg")
-  .attr("width", 1000)
+  .attr("width", 500)
   .attr("height", 500);
 
 // Load the data from the API

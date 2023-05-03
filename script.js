@@ -61,6 +61,10 @@ function markerPlace(array, map) {
     }
   });
 
+  const [first] = array;
+  const { latitude, longitude } = first.location_1;
+  map.setView([latitude, longitude], 13);
+
   array.forEach((item) => {
     console.log("marker place", item);
     const { latitude } = item.location_1;
