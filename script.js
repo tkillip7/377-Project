@@ -25,12 +25,21 @@ function filterList(list, query) {
     const lowerCaseQuery = query.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
   });
+
   /*
       Using the .filter array method, 
       return a list that is filtered by comparing the item name in lower case
       to the query in lower case
       Ask the TAs if you need help with this
     */
+}
+
+//added
+function filterZip(list, query) {
+  return list.filter((item) => {
+    const zip = item.zip_code;
+    return zip.includes(query);
+  });
 }
 
 function cutLibraryList(list) {
@@ -80,6 +89,7 @@ async function mainEvent() {
   const clearDataButton = document.querySelector("#data_clear");
   const generateListButton = document.querySelector("#generate");
   const textField = document.querySelector("#resto");
+  const zipField = document.querySelector("#zip");
 
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
@@ -134,6 +144,15 @@ async function mainEvent() {
   textField.addEventListener("input", (event) => {
     console.log("input", event.target.value);
     const newList = filterList(currentList, event.target.value);
+    injectHTML(newList);
+    console.log(newList);
+    markerPlace(newList, carto);
+  });
+
+  zipField.addEventListener("input", (event) => {
+    //added this
+    console.log("input", event.target.value);
+    const newList = filterZip(currentList, event.target.value);
     injectHTML(newList);
     console.log(newList);
     markerPlace(newList, carto);

@@ -37,17 +37,27 @@
             action="https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json"
             class="box main_form"
           >
-            <button type="button" id="data_load">Load County Data</button>
-            <button type="button" id="data_load">Clear County Data</button>
+            <button class="button-new" type="button" id="data_load">
+              Load County Data
+            </button>
+            <button class="button-new" type="button" id="data_load">
+              Clear County Data
+            </button>
             <div>
               <label for="resto">Filter By Library Name</label>
               <input type="text" id="resto" name="resto" />
             </div>
+            <div>
+              <label for="zip">Filter By Zip Code</label>
+              <input type="text" id="zip" name="zip" />
+            </div>
             <div class="buttons">
-              <button type="button" id="generate">Generate List</button>
+              <button class="button-new" type="button" id="generate">
+                Generate List
+              </button>
             </div>
           </form>
-          <ol class="box" id="library_list">
+          <ol id="library_list">
             A list of local Libraries
           </ol>
           <div class="lds-ellipsis" id="data_load_animation">
@@ -62,8 +72,7 @@
 
           <div id="map" class="box"></div>
 
-          <button id="toggle_display_button">Toggle Display</button>
-          <button class="graph_button" onclick="location.href='graph.html'">
+          <button class="button-new" onclick="location.href='graph.html'">
             Go to graph
           </button>
         </div>

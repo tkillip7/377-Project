@@ -2,7 +2,7 @@
 const svg = d3
   .select(".chart_box")
   .append("svg")
-  .attr("width", 500)
+  .attr("width", 1000)
   .attr("height", 500);
 
 // Load the data from the API
@@ -61,8 +61,8 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
       .data(zipCountsArray)
       .enter()
       .append("rect")
-      //.on("mouseover", onMouseOver) //bar animation
-      //.on("mouseout", onMouseOut) //bar animation
+      .on("mouseover", onMouseOver) //bar animation
+      .on("mouseout", onMouseOut) //bar animation
       .attr("x", (d) => xScale(d.zip_code))
       .attr("y", (d) => yScale(d.count))
       .attr("width", xScale.bandwidth())
@@ -91,7 +91,7 @@ d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
   .catch((error) => {
     console.log(error);
   });
-/*
+
 //Mouseover even handler
 function onMouseOver(d, i) {
   d3.select(this).attr("class", "highlight");
@@ -106,4 +106,19 @@ function onMouseOver(d, i) {
       return height - yScale(d.value) + 10;
     });
 }
-*/
+
+//Mouseout event handler
+
+function onMouseOut(d, i) {
+  d3.select(this).attr("class", "");
+  d3.select(this)
+    .transition()
+    .duration(500)
+    .attr("width", xScale.bandwidth())
+    .attr("y", function (d) {
+      return yScale(d.value);
+    })
+    .attr("height", function (d) {
+      return height - yScale(d.value);
+    });
+}
