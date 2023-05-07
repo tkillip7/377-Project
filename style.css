@@ -366,6 +366,13 @@ form input {
     .box {
       width: 85%;
     }
+    .chart_box {
+      width: 100%;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+    }
 }
 /* 
     New code bonus: pure CSS data loading icon

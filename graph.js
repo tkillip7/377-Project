@@ -2,8 +2,8 @@
 const svg = d3
   .select(".chart_box")
   .append("svg")
-  .attr("width", 1000)
-  .attr("height", 500);
+  .attr("viewBox", "0 0 1000 500")
+  .attr("preserveAspectRatio", "xMidYMid meet");
 
 // Load the data from the API
 d3.json("https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json")
