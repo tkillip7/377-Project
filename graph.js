@@ -2,7 +2,7 @@
 const svg = d3
   .select(".chart_box")
   .append("svg")
-  .attr("viewBox", "0 0 1000 500")
+  .attr("viewBox", "0 0 700 500")
   .attr("preserveAspectRatio", "xMidYMid meet");
 
 // Load the data from the API

@@ -136,6 +136,8 @@ h1 {
 
 .chart_box {
   background-color: rgb(123, 73, 32);
+  width: 500px;
+  height: 480px;
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -176,44 +178,6 @@ h1 {
 }
 
 
-/* Deploy this with images as direct "children" and the images should pop into shape */
-.grid {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-  width: 350px;
-  height: 350px;
-  margin: 0 auto;
-}
-
-.grid img {
-  width: 150px;
-  height: 150px;
-}
-
-
-/* Carousel */
-div.carousel {
-  max-width: 300px;
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-
-.carousel .slides {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* .carousel_item, */
 .hidden {
   display: none;
 }
@@ -306,20 +270,6 @@ div.carousel {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 Form Styles
 */
@@ -367,7 +317,7 @@ form input {
       width: 85%;
     }
     .chart_box {
-      width: 100%;
+      width: 120%;
     }
     svg {
       width: 100%;

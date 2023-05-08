@@ -89,7 +89,19 @@ async function mainEvent() {
   const clearDataButton = document.querySelector("#data_clear");
   const generateListButton = document.querySelector("#generate");
   const textField = document.querySelector("#resto");
-  // const zipField = document.querySelector("#zip");
+  const zipField = document.querySelector("#zip");
+
+  //This hides the map and displays the chart
+  document.getElementById("hide-map").addEventListener("click", function () {
+    map.style.display = "none";
+    chart.style.display = "block";
+  });
+
+  //this hides the chart and displays the map
+  document.getElementById("hide-graph").addEventListener("click", function () {
+    chart.style.display = "none";
+    map.style.display = "block";
+  });
 
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
