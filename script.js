@@ -171,9 +171,11 @@ async function mainEvent() {
   });
 
   clearDataButton.addEventListener("click", (event) => {
+    const target = document.querySelector("#library_list");
     console.log("clear browser data");
     localStorage.clear();
     console.log("localStorage Check", localStorage.getItem("storedData"));
+    target.innerHTML = "";
   });
 }
 
