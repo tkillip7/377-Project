@@ -45,10 +45,17 @@ function filterZip(list, query) {
 function cutLibraryList(list) {
   console.log("fired cut list");
   const range = [...Array(15).keys()];
-  return (newArray = range.map((item) => {
-    const index = getRandomIntInclusive(0, list.length - 1);
-    return list[index];
-  }));
+  let newArray = [];
+  range.map(() => {
+    let index = getRandomIntInclusive(0, list.length - 1);
+    let item = list[index];
+    while (newArray.includes(item)) {
+      index = getRandomIntInclusive(0, list.length - 1);
+      item = list[index];
+    }
+    newArray.push(item);
+  });
+  return newArray;
 }
 
 function initMap() {
