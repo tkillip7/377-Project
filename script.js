@@ -42,6 +42,7 @@ function filterZip(list, query) {
   });
 }
 
+//fixed function, so libraries only show up once now
 function cutLibraryList(list) {
   console.log("fired cut list");
   const range = [...Array(15).keys()];
