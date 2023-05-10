@@ -50,7 +50,7 @@ function cutLibraryList(list) {
   range.map(() => {
     let index = getRandomIntInclusive(0, list.length - 1);
     let item = list[index];
-    while (newArray.includes(item)) {
+    if (newArray.includes(item)) {
       index = getRandomIntInclusive(0, list.length - 1);
       item = list[index];
     }
